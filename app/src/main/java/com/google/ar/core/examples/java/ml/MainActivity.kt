@@ -35,6 +35,7 @@ import com.google.ar.core.exceptions.UnavailableUserDeclinedInstallationExceptio
 class MainActivity : AppCompatActivity() {
   val TAG = "MainActivity"
   lateinit var arCoreSessionHelper: ARCoreSessionLifecycleHelper
+  private var counter = 0
 
   lateinit var renderer: AppRenderer
   lateinit var view: MainActivityView
@@ -98,5 +99,17 @@ class MainActivity : AppCompatActivity() {
   override fun onWindowFocusChanged(hasFocus: Boolean) {
     super.onWindowFocusChanged(hasFocus)
     FullScreenHelper.setFullScreenOnWindowFocusChanged(this, hasFocus)
+  }
+
+  fun reset(){
+    counter = 0
+  }
+
+  fun increment(){
+    counter++
+  }
+
+  fun getCounterValue() : Int{
+    return counter
   }
 }

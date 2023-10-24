@@ -104,6 +104,7 @@ class AppRenderer(val activity: MainActivity) : DefaultLifecycleObserver, Sample
             arLabeledAnchors.clear()
             view.resetButton.isEnabled = false
             hideSnackbar()
+            activity.reset()
         }
     }
 
@@ -212,14 +213,14 @@ class AppRenderer(val activity: MainActivity) : DefaultLifecycleObserver, Sample
         for (arDetectedObject in arLabeledAnchors) {
             val anchor = arDetectedObject.anchor
             if (anchor.trackingState != TrackingState.TRACKING) continue
-            if(checkLabel(arDetectedObject.label)){
-            labelRenderer.draw(
-                render,
-                viewProjectionMatrix,
-                anchor.pose,
-                camera.pose,
-                "▼"
-            )
+            if (checkLabel(arDetectedObject.label)) {
+                labelRenderer.draw(
+                    render,
+                    viewProjectionMatrix,
+                    anchor.pose,
+                    camera.pose,
+                    "▼"
+                )
             }
         }
     }
