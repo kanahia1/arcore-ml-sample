@@ -53,8 +53,9 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_gravity="top|end"
-      android:padding="16dp"
       android:background="#55FFFFFF"
-      android:text="@string/use_cloud_ml" />
+      android:padding="16dp"
+      android:text="@string/use_cloud_ml"
+      android:visibility="gone" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
